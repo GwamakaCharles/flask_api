@@ -9,9 +9,8 @@ class Users(Resource):
 class User(Resource):
 
     def get(self,name):
-        user = UserModel.find_user_by_name(name).get_or_404()
-        return user.json()
+        user = UserModel.find_user_by_name(name)
         # call the class function
-        # if user: 
-        #     return user.json() # if the User exists return the User 
-        # return {'message': 'User not found'}, 404  # else return User not found 
+        if user: 
+            return user.json() # if the User exists return the User 
+        return {'message': 'User not found'}, 404  # else return User not found 
