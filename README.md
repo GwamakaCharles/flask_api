@@ -4,9 +4,9 @@ A Flask Rest API deployed on Heroku
 
 #### Description
 
-The API exposes endpoints to fetch , update, create and delete movies from two database tables :
+The API exposes endpoints to fetch users from the database :
 
-The 'users' table has columns 'name' 'year' (year of release) and 'ratings'
+The 'users' table has column 'name'
 
 #### Endpoints
 
