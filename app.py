@@ -28,8 +28,10 @@ def create_tables():
 # api.add_resource(Users, '/users')
 
 @api.resource(Users, '/users')
-def get(self):
-    return 'Hello, World!'
+class Foo(Resource):
+    def get(self):
+        return 'Hello, World!'
+        
 api.add_resource(User, '/user/<string:name>')
 
 
