@@ -6,8 +6,8 @@ class Users(Resource):
     def get(self):
         return {'users' : [user.json() for user in User.query.all()]}
         
-class User(Resource):
-    
+class _User(Resource):
+
     def get(self,name):
         user = User.find_user_by_name(name) # call the class function
         if user: 
