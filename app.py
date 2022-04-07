@@ -7,6 +7,7 @@ from resources.user import User, Users
 
 from db import db
 app = Flask(__name__)
+# app.config.from_object(BaseConfig)
 api = Api(app)
 
 uri = os.getenv("DATABASE_URL") 
@@ -24,7 +25,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def create_tables():
     db.create_all()
 
-api.add_resource(Users, '/users')
+# api.add_resource(Users, '/users')
+
+@api.resource(Users, '/users')
+def get(self):
+    return 'Hello, World!'
 api.add_resource(User, '/user/<string:name>')
 
 
