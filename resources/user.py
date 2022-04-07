@@ -4,7 +4,7 @@ from models.user import UserModel
 class Users(Resource):
     
     def get(self):
-        return {'users' : [user.json() for user in UserModel.query.paginate(1,20)]}
+        return {'users' : [user.json() for user in UserModel.query.paginate(1,20).items]}
         
 class User(Resource):
 
