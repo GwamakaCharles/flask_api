@@ -15,4 +15,4 @@ class UserModel(db.Model):
     
     @classmethod
     def find_user_by_name(cls,name): 
-       return cls.query.filter_by(name=name).first()
+       return cls.query.filter_by(name=name).first_or_404()
