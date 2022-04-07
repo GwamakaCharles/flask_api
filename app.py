@@ -3,8 +3,7 @@ import os
 from flask import Flask
 from flask_restful import  Api 
 
-from resources.director import Director, DirectorList
-from resources.movie import Movie, MovieList
+from resources.user import User, Users
 
 from db import db
 app = Flask(__name__)
@@ -25,12 +24,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def create_tables():
     db.create_all()
 
-api.add_resource(Director,'/director/<string:name>')
-api.add_resource(Movie, '/movie/<string:name>')
-api.add_resource(MovieList, '/movies')
-api.add_resource(DirectorList,'/directors')
+api.add_resource(Users, '/users')
 
 db.init_app(app)
+
 if __name__ == '__main__':
-    
     app.run(debug=True)
