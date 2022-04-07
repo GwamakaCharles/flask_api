@@ -25,6 +25,8 @@ def create_tables():
     db.create_all()
 
 api.add_resource(Users, '/users')
+api.add_resource(User, '/user/<string:name>')
+
 
 db.init_app(app)
 
