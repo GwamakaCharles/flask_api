@@ -12,3 +12,7 @@ class User(db.Model):
 
     def json(self):
         return {'name': self.name}
+    
+    @classmethod
+    def find_user_by_name(cls,name): 
+       return cls.query.filter_by(name=name).first()
